@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulários</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel='stylesheet' href="./css/styles.css">
+</head>
+
+<body>
+
+  <!-- inicio menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- fim menu -->
+
+  <!-- inicio formulario -->
+  <div class="container">
+    <h1 class="display-6">Formulário de Cadastro</h1>
+    <form id="form-aula" class="row" name="form-cadastro" action="https://www.google.com.br">
+      <!-- inicio primeira coluna -->
+      <div class="col-12 col-md-6">
+        <!-- inicio nome e email -->
+        <div class="mb-3">
+          <label for="inputNome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="inputNome">
+          <div class="erro-nome erro">Nome inválido</div>
+          <div class="sucesso-nome sucesso">OK</div>
+        </div>
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="inputEmail">
+          <div class="erro-email erro">E-mail inválido</div>
+          <div class="sucesso-email sucesso">OK</div>
+        </div>
+        <!-- fim nome e email -->
+
+        <!-- inicio select -->
+        <select class="form-select select-custom" aria-label="Default select example">
+          <option selected value="">Selecione seu estado</option>
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+        </select>
+        <!-- fim select -->
+
+        <div class="mb-3">
+          <label for="inputSenha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="inputSenha">
+        </div>
+
+        <!-- inicio checkbox -->
+        <div class="form-check">
+          <input class="form-check-input aceite-promocoes" type="checkbox" value="promo" id="flexCheckChecked1">
+          <label class="form-check-label" for="flexCheckChecked">
+            Deseja receber nossas promoções e de nossos parceiros.
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input aceite-promocoes" type="checkbox" value="termos" id="flexCheckChecked2"
+            required>
+          <label class="form-check-label" for="flexCheckChecked">
+            Concordar com o termos
+          </label>
+        </div>
+        <!-- fim checkbox -->
+      </div>
+      <!-- fim primeira coluna -->
+      
+      <!-- inicio segunda coluna -->
+      <div class="col-12 col-md-6">
+        
+        <!-- inicio radio  -->
+        <div class="form-check">
+          <input class="form-check-input radio-custom" value="item-1" type="radio" name="flexRadioDefault"
+            id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+            Default radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input radio-custom" value="item-2" type="radio" name="flexRadioDefault"
+            id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Default checked radio
+          </label>
+        </div>
+        <!-- fim radio  -->
+
+        <!-- inicio hidden -->
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <button type="button" class="btn btn-danger btn-menos">-</button>
+          <button type="button" class="btn qtd">1</button>
+          <button type="button" class="btn btn-success btn-mais">+</button>
+          <input class="quantidade" type="hidden" id="quantidade" value="1">
+        </div>
+        <!-- fim hidden -->
+
+        <!-- inicio textarea -->
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <!-- fim textarea -->
+      </div>
+      <!-- fim segunda coluna -->
+
+
+      <div class="d-grid gap-2 d-md-block">
+        <button type="submit" class="btn btn-success btn-custom">Cadastrar</button>
+      </div>
+
+    </form>
+    <!-- fim formulario -->
+
+    <!-- inicio footer -->
+    <div class="row mt-4">
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Dados da Empresa</h2>
+            <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then,
+              mix and match with additional component themes and more.</p>
+            <button class="btn btn-outline-light" type="button">Example button</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Links Uteis</h2>
+            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure
+              to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's
+              content for equal-height.</p>
+            <button class="btn btn-outline-secondary" type="button">Example button</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="py-3 mt-4 text-center border-top">
+    © 2021
+  </footer>
+
+  <!-- fim footer -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>

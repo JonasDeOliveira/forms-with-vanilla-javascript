@@ -1,0 +1,9 @@
+.erro {
+    color: red;
+    display: none;
+}
+
+.sucesso {
+    color: green;
+    display: none;
+}
