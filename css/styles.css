@@ -1,9 +1,21 @@
 .erro {
     color: red;
     display: none;
+    
 }
 
 .sucesso {
     color: green;
     display: none;
 }
+
+.valid {
+    border: 1px solid green;
+    background-color: rgba(0, 128, 0, 0.1);
+}
+
+.invalid {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+

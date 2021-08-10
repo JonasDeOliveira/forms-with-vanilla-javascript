@@ -61,10 +61,12 @@ inputNome.addEventListener('blur', function() {
         validObj.nome = true
         document.querySelector('.erro-nome').style.display = 'none'
         document.querySelector('.sucesso-nome').style.display = 'block'
+        this.setAttribute('class', 'form-control valid')
     } else {
         validObj.nome = false
         document.querySelector('.sucesso-nome').style.display = 'none'
         document.querySelector('.erro-nome').style.display = 'block'
+        this.setAttribute('class', 'form-control invalid')
     }
     validarForm()
 })
