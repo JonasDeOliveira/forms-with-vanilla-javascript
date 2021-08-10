@@ -38,13 +38,13 @@
         <!-- inicio nome e email -->
         <div class="mb-3">
           <label for="inputNome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="inputNome">
+          <input type="text" placeholder="Digite seu nome e sobrenome" class="form-control" id="inputNome" required>
           <div class="erro-nome erro">Nome inválido</div>
           <div class="sucesso-nome sucesso">OK</div>
         </div>
         <div class="mb-3">
           <label for="inputEmail" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="inputEmail">
+          <input type="email" placeholder="Digite seu e-mail" class="form-control" id="inputEmail">
           <div class="erro-email erro">E-mail inválido</div>
           <div class="sucesso-email sucesso">OK</div>
         </div>
@@ -61,7 +61,7 @@
 
         <div class="mb-3">
           <label for="inputSenha" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="inputSenha">
+          <input type="password" placeholder="Digite sua senha" class="form-control" id="inputSenha">
         </div>
 
         <!-- inicio checkbox -->
@@ -122,7 +122,8 @@
 
 
       <div class="d-grid gap-2 d-md-block">
-        <button type="submit" class="btn btn-success btn-custom">Cadastrar</button>
+        <div class="erro-form erro text-center"></div>
+        <button type="submit" disabled class="btn btn-success btn-custom">Cadastrar</button>
       </div>
 
     </form>

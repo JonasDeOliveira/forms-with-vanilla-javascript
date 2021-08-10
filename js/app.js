@@ -32,19 +32,41 @@ btnMais.addEventListener('click', aumentar)
 btnMenos.addEventListener('click', diminuir)
 //====fim contator usando input hidden====
 
+let validObj = {
+    nome: false,
+    email: true,
+}
+
+function validarForm() {
+    let btnSubmit = document.querySelector('.btn-custom')
+
+    let validArray = Object.values(validObj)
+    for (let i = 0; i < validArray.length; i++) {
+        if (validArray[i] == false) {
+            btnSubmit.setAttribute('disabled', true)
+            break
+        } else {
+            btnSubmit.removeAttribute('disabled')
+        }
+    }  
+}
+
 //====inicio validação com regex campo nome====
 let inputNome = document.querySelector('#inputNome')
 inputNome.addEventListener('blur', function() {
     let regexTexto = /[A-Z][a-z]* [A-Z][a-z]*/
-
+    
     // if (this.value.trim() == "") { sem regex
     if (regexTexto.test(this.value.trim())) {
+        validObj.nome = true
         document.querySelector('.erro-nome').style.display = 'none'
         document.querySelector('.sucesso-nome').style.display = 'block'
     } else {
+        validObj.nome = false
         document.querySelector('.sucesso-nome').style.display = 'none'
         document.querySelector('.erro-nome').style.display = 'block'
     }
+    validarForm()
 })
 //====fim validação campo nome====
 
@@ -54,12 +76,15 @@ inputEmail.addEventListener('blur', function() {
     let regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
 
     if (regexEmail.test(inputEmail.value.trim())) {
+        validObj.email = true
         document.querySelector('.erro-email').style.display = 'none'
         document.querySelector('.sucesso-email').style.display = 'block'
     } else {
+        validObj.email = false
         document.querySelector('.sucesso-email').style.display = 'none'
         document.querySelector('.erro-email').style.display = 'block'
     }
+    validarForm()
 })
 //====fim validação campo Email====
 
@@ -84,6 +109,7 @@ inputNome.addEventListener('input', function() {
 
 //====incio teste de captura de mudança em um select====
 let selectEstado = document.querySelector('.select-custom')
+
 selectEstado.addEventListener('change', function() {
     let selectedIndex = selectEstado.selectedIndex
     let itemSelected = selectEstado.options[selectedIndex]
@@ -98,7 +124,6 @@ selectEstado.addEventListener('change', function() {
 let form = document.querySelector('#form-aula')
 form.addEventListener('submit', function(event) {
     event.preventDefault() //cancela o comportamento padrão de enviar uma action
-
     //selecionar o radio que está checado
     let radio = document.querySelector('.radio-custom:checked')
     // console.log(radio.value)
